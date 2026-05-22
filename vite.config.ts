@@ -5,6 +5,13 @@ import tailwindcss from 'tailwindcss'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: ['./tests/setup/setupTests.ts'],
+    include: ['tests/**/*.test.{ts,tsx}'],
+  },
+
   resolve: { alias: { '@': '/src' } },
   plugins: [
     react(),
